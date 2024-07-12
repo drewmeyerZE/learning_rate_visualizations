@@ -1,5 +1,6 @@
 # Learning Rate Visualizations
 This repository contains a Python program that demonstrates the use of different learning rate schedulers in training a simple convolutional neural network (CNN) on the CIFAR-10 dataset using PyTorch.
+RECOMMENDED to use a GPU with CUDA support and at least 6 GB VRAM
 
 ## Prerequisites
 Before you can run this program, you'll need to install Python and PyTorch along with some other required libraries. It's recommended to use a virtual environment.
