@@ -40,12 +40,12 @@ transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
-trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
+trainset = torchvision.datasets.CIFAR10(root='../data', train=True,
                                         download=True, transform=transform)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
                                           shuffle=True, num_workers=8)
 
-testset = torchvision.datasets.CIFAR10(root='./data', train=False,
+testset = torchvision.datasets.CIFAR10(root='../data', train=False,
                                        download=True, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                          shuffle=False, num_workers=8)
@@ -145,5 +145,5 @@ for scheduler_name, scheduler_fn in schedulers.items():
     plt.xlabel('Epoch')
     plt.ylabel('Learning Rate')
     plt.title(f'Learning Rate Schedule - {scheduler_name}')
-    plt.savefig(f'learning_rate_{scheduler_name}.png')
+    plt.savefig(f'../visualizations/learning_rate_{scheduler_name}.png')
     plt.close()
