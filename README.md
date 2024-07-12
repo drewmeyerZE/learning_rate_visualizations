@@ -18,7 +18,7 @@ Before you can run this program, you'll need to install Python and PyTorch along
 ## Running the Experiment
 To run the experiment with different learning rate schedulers, execute the main.py file:
 ```bash
-python main.py
+python model.py
 ```
 ### Important Configurations
 Here are some important lines in the code you might want to adjust based on your experimental setup:
