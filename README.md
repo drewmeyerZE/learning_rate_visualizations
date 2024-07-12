@@ -11,8 +11,8 @@ Before you can run this program, you'll need to install Python and PyTorch along
 ### Installation
 1. Clone this repository
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/drewmeyerZE/learning_rate_visualizations.git
+   cd learning_rate_visualizations
    ```
 2. Install the required packages:
    ```bash
