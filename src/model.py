@@ -126,7 +126,9 @@ for scheduler_name, scheduler_fn in schedulers.items():
     # Track learning rates
     learning_rates = []
 
-    for epoch in range(20):  # Number of epochs can be adjusted
+    num_epochs = 20
+
+    for epoch in range(num_epochs):  # Number of epochs can be adjusted
         train(model, trainloader, criterion, optimizer, epoch, device)
         val_loss = evaluate(model, testloader, criterion, device)
         if scheduler_name == "ReduceLROnPlateau":
@@ -143,5 +145,5 @@ for scheduler_name, scheduler_fn in schedulers.items():
     plt.xlabel('Epoch')
     plt.ylabel('Learning Rate')
     plt.title(f'Learning Rate Schedule - {scheduler_name}')
-    plt.savefig(f'visualizations/learning_rate_{scheduler_name}.png')
+    plt.savefig(f'learning_rate_{scheduler_name}.png')
     plt.close()
