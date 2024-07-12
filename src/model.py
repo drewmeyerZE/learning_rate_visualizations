@@ -91,26 +91,31 @@ criterion = nn.CrossEntropyLoss()
 
 # Define Learning Rate Schedulers
 schedulers = {
-    "LambdaLR": lambda optimizer: lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: 0.75 ** epoch),
-    #"MultiplicativeLR": lambda optimizer: lr_scheduler.MultiplicativeLR(optimizer, lr_lambda=lambda epoch: 0.95),
-    #"StepLR": lambda optimizer: lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1),
-    #"MultiStepLR": lambda optimizer: lr_scheduler.MultiStepLR(optimizer, milestones=[30, 80], gamma=0.1),
-    #"ConstantLR": lambda optimizer: lr_scheduler.ConstantLR(optimizer, factor=1, total_iters=5),
+    # Simple Schedulers
+    #"LambdaLR": lambda optimizer: lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: 0.75 ** epoch),
     #"LinearLR": lambda optimizer: lr_scheduler.LinearLR(optimizer, start_factor=0.5, total_iters=5),
-    #"ExponentialLR": lambda optimizer: lr_scheduler.ExponentialLR(optimizer, gamma=0.95),
+    #"ConstantLR": lambda optimizer: lr_scheduler.ConstantLR(optimizer, factor=.50, total_iters=20),
+    #"MultiplicativeLR": lambda optimizer: lr_scheduler.MultiplicativeLR(optimizer, lr_lambda=lambda epoch: 0.95),
     #"PolynomialLR": lambda optimizer: lr_scheduler.PolynomialLR(optimizer, total_iters=5, power=2.0),
-    #"CosineAnnealingLR": lambda optimizer: lr_scheduler.CosineAnnealingLR(optimizer, T_max=10),
-    #"ChainedScheduler": lambda optimizer: lr_scheduler.ChainedScheduler([
-    #    lr_scheduler.LinearLR(optimizer, start_factor=0.5, total_iters=5),
-    #    lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
-    #]),
+    #"ExponentialLR": lambda optimizer: lr_scheduler.ExponentialLR(optimizer, gamma=0.95),
+    #"ReduceLROnPlateau": lambda optimizer: lr_scheduler.ReduceLROnPlateau(optimizer, 'min'),
+
+    # Step-wise Schedulers
+    #"StepLR": lambda optimizer: lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1),
+    #"MultiStepLR": lambda optimizer: lr_scheduler.MultiStepLR(optimizer, milestones=[5, 10], gamma=0.1),
     #"SequentialLR": lambda optimizer: lr_scheduler.SequentialLR(optimizer, schedulers=[
     #    lr_scheduler.ConstantLR(optimizer, factor=1, total_iters=5),
     #    lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
     #], milestones=[5]),
-    #"ReduceLROnPlateau": lambda optimizer: lr_scheduler.ReduceLROnPlateau(optimizer, 'min'), # DEBUG STUCK HERE
-    #"CyclicLR": lambda optimizer: lr_scheduler.CyclicLR(optimizer, base_lr=0.01, max_lr=0.1, step_size_up=10),
+    #"ChainedScheduler": lambda optimizer: lr_scheduler.ChainedScheduler([
+    #    lr_scheduler.LinearLR(optimizer, start_factor=0.5, total_iters=5),
+    #    lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
+    #]),
+
+    # Cyclical Schedulers
     #"OneCycleLR": lambda optimizer: lr_scheduler.OneCycleLR(optimizer, max_lr=0.1, total_steps=50),
+    #"CyclicLR": lambda optimizer: lr_scheduler.CyclicLR(optimizer, base_lr=0.01, max_lr=0.1, step_size_up=2.5),
+    #"CosineAnnealingLR": lambda optimizer: lr_scheduler.CosineAnnealingLR(optimizer, T_max=15, eta_min=0),
     #"CosineAnnealingWarmRestarts": lambda optimizer: lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10)
 }
 
