@@ -25,11 +25,8 @@ To run the experiment with different learning rate schedulers, execute the main.
 python model.py
 ```
 ### Important Configurations
-Here are some important lines in the code you might want to adjust based on your experimental setup:
-- Batch Size: The batch size for training and evaluation is set on line 36. Modify this value to fit the memory capabilities of your GPU.
-- Learning Rate Schedulers: Starting at line 94, the parameters for each learning rate scheduler can be adjusted. Each scheduler can be configured to see how it affects the training dynamics. The program will run an experiment for every scheduler that is uncommented. The parameters can be adjusted accordingly. Please see [https://pytorch.org/docs/stable/optim.html] for the documentation on the learn rate schedulers.
-- Number of Epochs: The number of training epochs is set on line 129. Increase or decrease based on how long you want the training to run.
-- Output Path for Graphs: Graphs showing the learning rate schedules are saved to the project directory with names `learning_rate_{scheduler_name}.png` as defined on line 148. Change the paths if you prefer different storage locations.
+The batch size, learn rates, and number of epochs are edited in the config.py file
+Graphs showing the learning rate schedules are saved to the project directory with names `learning_rate_{scheduler_name}.png` as defined on line 164. Change the paths if you prefer different storage locations.
 
 ## Dataset
 This program uses the CIFAR-10 dataset, which is automatically downloaded when you run the program.
