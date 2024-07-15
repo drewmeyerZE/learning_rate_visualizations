@@ -1,0 +1,111 @@
+{
+    "schedulers": [
+      {
+        "name": "LambdaLR",
+        "params": {},
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "LinearLR",
+        "params": {
+          "start_factor": 0.5,
+          "total_iters": 5
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "ConstantLR",
+        "params": {
+          "factor": 0.5,
+          "total_iters": 20
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "MultiplicativeLR",
+        "params": {},
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "PolynomialLR",
+        "params": {
+          "total_iters": 5,
+          "power": 2.0
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "ExponentialLR",
+        "params": {
+          "gamma": 0.80
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "StepLR",
+        "params": {
+          "step_size": 5,
+          "gamma": 0.1
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "MultiStepLR",
+        "params": {
+          "milestones": [5, 10],
+          "gamma": 0.1
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "ChainedScheduler",
+        "params": {},
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "OneCycleLR",
+        "params": {
+          "max_lr": 0.1,
+          "total_steps": 30
+        },
+        "initial_lr": 0.01,
+        "num_epochs": 30
+      },
+      {
+        "name": "CyclicLR",
+        "params": {
+          "base_lr": 0.01,
+          "max_lr": 0.1,
+          "step_size_up": 2.5
+        },
+        "initial_lr": 0.01,
+        "num_epochs": 30
+      },
+      {
+        "name": "CosineAnnealingLR",
+        "params": {
+          "T_max": 10,
+          "eta_min": 0
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      },
+      {
+        "name": "CosineAnnealingWarmRestarts",
+        "params": {
+          "T_0": 10
+        },
+        "initial_lr": 0.1,
+        "num_epochs": 30
+      }
+    ]
+  }
