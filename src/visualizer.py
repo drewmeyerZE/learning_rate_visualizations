@@ -1,8 +1,17 @@
+"""
+Project: LR Scheduler Visualizations
+File: visualizer.py
+Authors: Drew Meyer
+Create On: 7/15/2024
+Description: Takes an LR config as input and creates LR schedulers visualizations
+"""
+
 import json
 import torch
 import torch.optim as optim
 from torch.optim import lr_scheduler
 import matplotlib.pyplot as plt
+import math
 
 def load_config(config_path):
     with open(config_path, 'r') as f:
@@ -14,18 +23,13 @@ def create_scheduler(scheduler_config):
     initial_lr = scheduler_config['initial_lr']
     num_epochs = scheduler_config['num_epochs']
 
-    # Create a dummy optimizer
     dummy_model = torch.nn.Linear(1, 1)
     optimizer = optim.SGD(dummy_model.parameters(), lr=initial_lr)
 
-    # Create the scheduler
     if name == 'StepLR':
         return lr_scheduler.StepLR(optimizer, **params)
     elif name == 'ExponentialLR':
         return lr_scheduler.ExponentialLR(optimizer, **params)
-    # Add more schedulers as needed
-
-import math
 
 def generate_lr_schedule(scheduler_config):
     name = scheduler_config['name']
@@ -98,7 +102,6 @@ def generate_lr_schedule(scheduler_config):
                 lr_schedule.append(lr_schedule[-1])
 
     elif name == "ChainedScheduler":
-        # This is a simplified version, assuming three phases as in your original code
         phase1_iters = 5
         phase2_iters = 15
         for epoch in range(1, num_epochs):
