@@ -22,7 +22,7 @@ Before you can run this program, you'll need to install Python and PyTorch along
 ## Running the Experiment
 To run the experiment with different learning rate schedulers, execute the main.py file:
 ```bash
-python model.py
+python visualizer.py
 ```
 ### Important Configurations
 The batch size, learn rates, and number of epochs are edited in the config.py file
